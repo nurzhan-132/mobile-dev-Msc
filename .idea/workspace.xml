@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6640ec43-3745-41b0-895b-6fe53f084eec" name="Changes" comment="&#10;git commit -m &quot;Exercise-1 is done&quot;">
-      <change afterPath="$PROJECT_DIR$/Exercise2.kt" afterDir="false" />
+    <list default="true" id="6640ec43-3745-41b0-895b-6fe53f084eec" name="Changes" comment="&#10;git commit -m &quot;Exercise-2 is done&quot;">
+      <change afterPath="$PROJECT_DIR$/Exercise3.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +55,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Kotlin.Exercise1Kt.executor": "Run",
+    "Kotlin.Exercise2Kt.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
@@ -66,7 +67,7 @@
     "settings.editor.selected.configurable": "preferences.language.Kotlin.scripting"
   }
 }]]></component>
-  <component name="RunManager" selected="Kotlin.Exercise2Kt">
+  <component name="RunManager" selected="Kotlin.Exercise3Kt">
     <configuration name="Exercise1Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Exercise1Kt" />
       <module name="mobile-dev-Msc" />
@@ -81,8 +82,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Exercise3Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Exercise3Kt" />
+      <module name="mobile-dev-Msc" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.Exercise3Kt" />
         <item itemvalue="Kotlin.Exercise2Kt" />
         <item itemvalue="Kotlin.Exercise1Kt" />
       </list>
@@ -113,12 +122,21 @@
       <option name="project" value="LOCAL" />
       <updated>1727425952844</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="&#10;git commit -m &quot;Exercise-2 is done&quot;">
+      <option name="closed" value="true" />
+      <created>1727426440632</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727426440632</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&#10;git commit -m &quot;first commit&quot;" />
     <MESSAGE value="&#10;git commit -m &quot;Exercise-1 is done&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;git commit -m &quot;Exercise-1 is done&quot;" />
+    <MESSAGE value="&#10;git commit -m &quot;Exercise-2 is done&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;git commit -m &quot;Exercise-2 is done&quot;" />
   </component>
 </project>
