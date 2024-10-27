@@ -1,47 +1,48 @@
 package com.example.taskmanagement
 
+import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.taskmanagement.ui.theme.TaskManagementTheme
+import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.taskmanagement.databinding.ActivityMainBinding
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity(), MainClickListener {
+    private lateinit var binding: ActivityMainBinding
+
+    private val taskViewModel: TaskViewModel by viewModels {
+        TaskItemModelFactory((application as TaskManagementApplication).repository)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            TaskManagementTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.newTaskButton.setOnClickListener {
+            TaskForm(null).show(supportFragmentManager, "newTaskTag")
+        }
+        setRecyclerView()
+    }
+
+    private fun setRecyclerView() {
+        val mainActivity = this
+        taskViewModel.taskItems.observe(this) {
+            binding.todoListRecyclerView.apply {
+                layoutManager = LinearLayoutManager(applicationContext)
+                adapter = TaskRecyclerAdapter(it, mainActivity)
             }
         }
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+    override fun editTaskItem(taskItem: TaskModel) {
+        TaskForm(taskItem).show(supportFragmentManager, "newTaskTag")
+    }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    TaskManagementTheme {
-        Greeting("Android")
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun completeTaskItem(taskItem: TaskModel) {
+        taskViewModel.setCompleted(taskItem)
     }
 }
