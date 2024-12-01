@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt")
 }
 
 android {
@@ -59,6 +60,30 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    // Room dependencies
+    implementation ("androidx.room:room-runtime:2.5.0")
+    implementation(libs.androidx.appcompat)
+    annotationProcessor ("androidx.room:room-compiler:2.5.0") // for Java
+    kapt ("androidx.room:room-compiler:2.5.0") // for Kotlin
+
+    // Coroutines for background tasks
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+
+    // RecyclerView
+    implementation ("androidx.recyclerview:recyclerview:1.2.1")
+
+    // ViewModel and LiveData
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.0")
+    // Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // Gson
+    implementation ("com.google.code.gson:gson:2.8.8")
+
+    // Coroutines support for Retrofit
+    implementation ("com.squareup.retrofit2:adapter-rxjava2:2.9.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
