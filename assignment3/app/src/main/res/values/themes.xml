@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Use AppCompat Light theme with no ActionBar -->
+    <style name="Theme.Assignment3" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- You can add customizations like primary color, text color, etc. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+</resources>
